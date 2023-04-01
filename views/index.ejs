@@ -1,0 +1,197 @@
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <title>home page</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>hello <%= name %></h1>
+            <form action="/logout?_method=DELETE" method="POST">
+                <button class="but" type="submit">logout</button>
+
+            </form>
+        </div>
+    </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        font-family: 'poppins',sans-serif;
+
+    }
+    body{
+        display: grid;
+        justify-content: center;
+        height: 100vh;
+        margin: 0px;
+    }
+    .header{
+        background-color:papayawhip;
+        height: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+
+    }
+    .content{
+        background-image: url('https://media.istockphoto.com/id/647197172/photo/vintage-photo-of-lavender-field.jpg?s=612x612&w=0&k=20&c=lMRdg0O_UzJTIv7yC6OdHb1cbNMg0xpj1FtVjBmlNj8=');
+        background-size: cover;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: aliceblue;
+
+    }
+    h1{
+        font-size: 50px;
+        position:relative;
+        margin: 0;
+        font-weight: 900;
+        z-index: 1;
+        overflow: hidden;
+    }
+    .but{
+        border-radius: 30px;
+        border-width: 1px;
+        padding: 10px;
+        width: 150px;
+        background-color: rgb(227, 188, 103);
+        box-shadow: 10px 20px 25px rgba( 0,0,0,.3);
+     }
+     .but:hover{
+        color: rgb(227, 188, 103) ;
+        background-color: black;
+        
+     }
+     .container{
+        background-size: cover;
+        font-family: sans-serif;
+        height: 100vh;
+        margin: 0;
+        row-gap: 0;
+        width: 100vw;
+        
+        
+     }
+    /* h1 span{
+        color: black;
+        font-size: 80px;
+     } */
+     /* h1 ::before{
+        content: '';
+        position: absolute;
+        left: 120%;
+        width: 120%;
+        height: 100%;
+        background:linear-gradient(90deg,transparent 0%, 5%,100%);
+        animation:animate 5.5s linear forwards;
+     } */
+     /* @keyframes  animate
+     {
+        0%{
+            left:110%
+        }
+        100%
+        {
+            left:20%
+        }
+     } */
+     .back{
+        background-color: bisque;
+        display: inline-flex;
+        justify-content: center;
+        width: 600px;
+        height: 200px;
+        border-radius: 5px;
+        padding: 10px;
+     }
+     .static-txt{
+        color:#fff;
+        font-size: 60px;
+        font-weight: 500;
+     }
+     .dynamic-txt{
+        margin-left:15px;
+        height: 90px;
+        line-height: 90px;
+        overflow: hidden;
+     }
+     .dynamic-txt li{
+        color: #db9191;
+        list-style: none;
+        font-size: 60px;
+        font-weight: 500;
+        position: relative;
+        top: 0;
+        animation :slide 8s steps(1) infinite;
+     }
+     @keyframes slide{
+        100%{
+            top:-340px;
+        }
+     }
+     .dynamic-txt li span{
+        position: relative;
+     }
+     .dynamic-txt li span::after{
+        content:"";
+        position: absolute;
+        left: 0;
+        background:bisque;
+        height: 100%;
+        width: 100%;
+        border-left: 2px solid #db9191;
+        animation: typing 1.5s steps(10) infinite;
+     }
+     @keyframes typing{
+        100%{
+            left: 100%;
+            margin:0 -35px 0 35px;
+        }
+     }
+
+
+</style>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 style="font-size: 20px;">Welcome Page</h1>
+
+
+            <form action="/logout?_method=DELETE" method="POST">
+                <button class="but" type="submit">Logout</button>
+            </form>
+
+        </div>
+        <div class="content">
+            <div class="back">
+                <div class="static-txt">Hello</div>
+                <ul class="dynamic-txt">
+                    <li><span> <%= name %></span></li>
+                    <li><span> <%= name %></span></li>
+                </ul>
+            </div>
+            <p></p>
+            
+        </div>
+
+
+    </div>
+    
+</body>
+</html>

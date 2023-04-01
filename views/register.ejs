@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>register form</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        *{
+    box-sizing: border-box;
+
+}
+body{
+    background-image: url('https://static.vecteezy.com/system/resources/previews/000/598/522/original/light-pastel-color-vector-low-poly-crystal-background-polygon-design-pattern-low-poly-illustration-background.jpg');
+    background-size: cover;
+    font-family: sans-serif;
+    display: grid;
+    height: 100vh;
+    margin: 0;
+
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin-bottom: 130px;
+    height: 75%;
+    overflow: auto;
+    
+}
+.container{
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 10px 20px 25px rgba( 0,0,0,.3);
+    overflow: auto;
+    width: 400px;
+    height: 100%;
+    
+}
+.header{
+    border-bottom: 1px solid #f0f0f0;
+    background-color: #f7f7f7;
+    padding: 20px 40px;
+}
+.header h2{
+    margin: 0;
+    text-align: center;
+
+}
+.form{
+    padding: 30px 40px;
+
+}
+.form-control{
+    margin-bottom: 10px;
+    padding-bottom:20px;
+    position: relative;
+
+}
+.form-control label{
+    display: inline-block;
+    margin: 5px;
+}
+.form-control input{
+    border:2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+}
+.form-control input:focus{
+     outline: none;
+     border-color: #777;
+}
+.form-control.success input{
+    border-color: #2ecc71;
+}
+.form-control.error input{
+    border-color: red;
+}
+.form-control small{
+    color: red;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    visibility: hidden;
+}
+.form-control.error small{
+    visibility:  visible;
+}
+
+.button{
+    background-color: #b30065;
+    border: none;
+    color: #fff;
+    display: block;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 4px;
+}
+.img_title{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    height: 100px;
+    mix-blend-mode: multiply;
+}
+.gen-det{
+    display: flex;
+    flex-direction: row;
+    row-gap: 10px;
+    position: relative;
+}
+
+    </style>
+    <title>register page</title>
+</head>
+<body>
+    <div class="img_title">
+        <img src="sanjay-name.jpg" alt="title" class="title_img">
+
+    </div>
+    <div class="content">
+        
+        <div class="container">
+        <div class="header">
+            <h2>Personal Details</h2>
+        </div>
+        <form class="form" id="form" action="/register" method="POST">
+
+            <% if(messages.error){ %>
+                <div class="alert alert-danger">
+                    <strong><%= messages.error%></strong>
+                </div>
+            <% } %>
+
+
+            <div class="form-control">
+                <label>Username:</label>
+                <input type="text" name="name" placeholder="enter your name" id="username">
+                <small>error message</small>
+
+            </div>
+            <div class="form-control">
+                <label> New password:</label>
+                <input type="password" name="password" placeholder="enter your password" id="password">
+                <small>error message</small>
+
+                
+            </div>
+            <!-- <div class="form-control">
+                <label> Confirm password:</label>
+                <input type="password" name="password" placeholder="enter your password" id="password1">
+                <small>error message</small> -->
+
+                
+            <!-- </div> -->
+          
+            <div class="form-control">
+                <label> Mobile:</label>
+                <div class="gen-det">
+                    <select id="country" onchange="country_code">
+                        <option value="Select country">select country</option>
+                        <option value="Ind">&#x1F1EE;&#x1F1F3; IND</option>
+                        <option value="US">	&#x1F1FA;&#x1F1F8; US</option>
+                        <option value="AUS">&#x1F1E6;&#x1F1FA; AUS</option>
+                        <option value="AER">&#127462;&#127479; AER</option>
+    
+                    </select>
+                    <input type="text" placeholder="your Mobile number" id="number" name="number">
+                    <small>error message</small>
+
+                    
+                </div>
+                
+                
+            </div>
+            
+            <input type="submit" value="register" class="button">
+            <div class="form-control">
+                <p style="text-align: center;">already a user?<a href="/login">login</a></p>
+            </div>
+
+            
+            
+             
+            
+
+        </form>
+
+    </div>
+</div>
+
+<script>
+    function country_code(){
+        var val=document.getElementById("country");
+        var number=document.getElementById("number");
+
+
+        if(val === "Select country"){
+            number.value+=" ";
+        }
+        else if(val === "US")
+        {
+            number.value+="+1";
+        }
+        else if(val === "Ind")
+        {
+            number.value+="+91";
+        }
+        else if(val === "AER")
+        {
+            number.value+="+54";
+        }
+        else if(val === "AUS")
+        {
+            number.value+="+61";
+        }
+    }
+
+
+
+
+</script>
+</body>
+</html>
