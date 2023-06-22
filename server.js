@@ -25,7 +25,7 @@ app.use(flash())
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave:false,
-    saveUninitialized:false
+    saveUninitialized:true
 }))
 app.use(passport.initialize())
 app.use(passport.session())
@@ -51,7 +51,6 @@ app.post("/register",chechNotAuthenticated,async(req,res)=>{
             id:Date.now().toString(),
             name:req.body.name,
             password:HashedPassword,
-            number:req.body.number,
         })
         console.log(users);
         res.redirect("/login")
@@ -100,4 +99,4 @@ function chechNotAuthenticated(req,res,next){
     
 }
 
-app.listen(4000);   
+app.listen(5000);   
