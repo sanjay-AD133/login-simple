@@ -3,229 +3,1768 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=\, initial-scale=1.0">
-    <title>register form</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-------- title ----------->
+    <title>Online Book Shop || Web Designer Max</title>
+
+    <!-------- customer style link ----------->
     <style>
-        *{
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,500;0,600;1,400;1,600&display=swap');
+
+:root{
+    --blue:#477eff;
+    --dark-color:#0c53f9;
+    --black:#444;
+    --light-color:#666;
+    --border:0.1rem solid rgba(0,0,0,0.1);
+    --border-hover:0.1rem solid var(--black);
+    --box-shadow:0 0.5rem 1rem rgba(0,0,0,0.1);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
     box-sizing: border-box;
-
-}
-body{
-    background-image: url('https://static.vecteezy.com/system/resources/previews/000/598/522/original/light-pastel-color-vector-low-poly-crystal-background-polygon-design-pattern-low-poly-illustration-background.jpg');
-    background-size: cover;
-    font-family: sans-serif;
-    display: grid;
-    height: 100vh;
-    margin: 0;
-
+    outline: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+    transition: width none;
 }
 
-.content{
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width: 1rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: var(--black);
+}
+
+.header .header_one{
     display: flex;
-    justify-content: center;
-    align-self: center;
-    margin-bottom: 130px;
-    height: 75%;
-    overflow: auto;
-    
-}
-.container{
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 9%;
     background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 10px 20px 25px rgba( 0,0,0,.3);
-    overflow: auto;
-    width: 400px;
+}
+
+.header .header_one .logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color:var(--black);
+}
+
+.header .header_one .logo i{
+    color: var(--blue);
+}
+
+.header .header_one .search-form{
+    width: 50rem;
+    height: 5rem;
+    border: var(--border);
+    overflow: hidden;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: 0.5rem;
+}
+
+.header .header_one .search-form input{
+    font-size: 1.6rem;
+    padding: 0 1.2rem;
     height: 100%;
-    
+    width: 100%;
+    text-transform: none;
+    color: var(--black);
 }
-.header{
-    border-bottom: 1px solid #f0f0f0;
-    background-color: #f7f7f7;
-    padding: 20px 40px;
+
+.header .header_one .search-form label{
+    font-size: 2.5rem;
+    padding-right: 1.5rem;
+    color: var(--black);
+    cursor: pointer;
 }
-.header h2{
-    margin: 0;
+
+.header .header_one .search-form label:hover{
+    color:var(--blue);
+}
+
+.header .header_one .icons div,
+.header .header_one .icons a{
+    font-size: 2.5rem;
+    margin-left: 1.5rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.header .header_one .icons div:hover,
+.header .header_one .icons a:hover{
+    color: var(--blue);
+}
+
+#search-btn{
+    display: none;
+}
+
+/*------ navigation bar ---------*/
+.header .header_two{
+    background-color: var(--blue);
+}
+
+.header .header_two .navbar{
     text-align: center;
-
-}
-.form{
-    padding: 30px 40px;
-
-}
-.form-control{
-    margin-bottom: 10px;
-    padding-bottom:20px;
-    position: relative;
-
-}
-.form-control label{
-    display: inline-block;
-    margin: 5px;
-}
-.form-control input{
-    border:2px solid #f0f0f0;
-    border-radius: 4px;
-    display: block;
-    font-size: 14px;
-    padding: 10px;
-    width: 100%;
-}
-.form-control input:focus{
-     outline: none;
-     border-color: #777;
-}
-.form-control.success input{
-    border-color: #2ecc71;
-}
-.form-control.error input{
-    border-color: red;
-}
-.form-control small{
-    color: red;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    visibility: hidden;
-}
-.form-control.error small{
-    visibility:  visible;
 }
 
-.button{
-    background-color: #b30065;
-    border: none;
+.header .header_two .navbar a{
     color: #fff;
-    display: block;
-    font-size: 16px;
-    width: 100%;
-    margin-top: 20px;
-    padding: 10px;
-    border-radius: 4px;
-}
-.img_title{
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    height: 100px;
-    mix-blend-mode: multiply;
-}
-.gen-det{
-    display: flex;
-    flex-direction: row;
-    row-gap: 10px;
-    position: relative;
+    display: inline-block;
+    padding: 1.2rem;
+    font-size: 1.7rem;
 }
 
-    </style>
-    <title>register page</title>
-</head>
-<body>
-    <div class="img_title">
-        <!-- <img src="sanjay-name.jpg" alt="title" class="title_img"> -->
+.header .header_two .navbar a:hover{
+    background: var(--dark-color);
+}
 
-    </div>
-    <div class="content">
-        
-        <div class="container">
-        <div class="header">
-            <h2>Personal Details</h2>
-        </div>
-        <form class="form" id="form" action="/register" method="POST">
+.header .header_two.active{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
 
-            <% if(messages.error){ %>
-                <div class="alert alert-danger">
-                    <strong><%= messages.error%></strong>
-                </div>
-            <% } %>
-
-
-            <div class="form-control">
-                <label>Username:</label>
-                <input type="text" name="name" placeholder="enter your name" id="username">
-                <small>error message</small>
-
-            </div>
-            <div class="form-control">
-                <label> New password:</label>
-                <input type="password" name="password" placeholder="enter your password" id="password">
-                <small>error message</small>
-
-                
-            </div>
-            <!-- <div class="form-control">
-                <label> Confirm password:</label>
-                <input type="password" name="password" placeholder="enter your password" id="password1">
-                <small>error message</small> -->
-
-                
-            <!-- </div> -->
-          
-            <div class="form-control">
-                <label> Mobile:</label>
-                <div class="gen-det">
-                    <select id="country" onchange="country_code">
-                        <option value="Select country">select country</option>
-                        <option value="Ind">&#x1F1EE;&#x1F1F3; IND</option>
-                        <option value="US">	&#x1F1FA;&#x1F1F8; US</option>
-                        <option value="AUS">&#x1F1E6;&#x1F1FA; AUS</option>
-                        <option value="AER">&#127462;&#127479; AER</option>
-    
-                    </select>
-                    <input type="text" placeholder="your Mobile number" id="number" name="number">
-                    <small>error message</small>
-
-                    
-                </div>
-                
-                
-            </div>
-            
-            <input type="submit" value="register" class="button">
-            <div class="form-control">
-                <p style="text-align: center;">already a user?<a href="/login">login</a></p>
-            </div>
-
-            
-            
-             
-            
-
-        </form>
-
-    </div>
-</div>
-
-<script>
-    function country_code(){
-        var val=document.getElementById("country");
-        var number=document.getElementById("number");
-
-
-        if(val === "Select country"){
-            number.value+=" ";
-        }
-        else if(val === "US")
-        {
-            number.value+="+1";
-        }
-        else if(val === "Ind")
-        {
-            number.value+="+91";
-        }
-        else if(val === "AER")
-        {
-            number.value+="+54";
-        }
-        else if(val === "AUS")
-        {
-            number.value+="+61";
-        }
+/*---- media query ----------*/
+@media(max-width:991px){
+    html{
+        font-size: 55%;
     }
 
+    .header .header_one{   
+        padding: 2rem;
+    }
+}
+
+@media(max-width:768px){
+    html{
+        scroll-padding-top: 0;
+    }
+
+    body{
+        padding-bottom: 6rem;
+    }
+
+    .header .header_two{
+        display: none;
+    }
+
+    .header .header_one{
+        box-shadow: var(--box-shadow);
+        position: relative;
+    }
+
+    .header .header_one .search-form{
+        position: absolute;
+        top: -115%;
+        right: 2rem;
+        width: 90%;
+        box-shadow: var(--box-shadow);
+    }
+
+    .header .header_one .search-form.active{
+        top: 115%;
+    }
+
+    #search-btn{
+        display: inline-block;
+    }
+}
+
+@media(max-width:450px){
+    html{
+        font-size: 50%;
+    }
+}
+
+/*-----  bottom navbar  ---------*/
+.bottom-navbar{
+    text-align: center;
+    background: var(--blue);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: none;
+}
+
+.bottom-navbar a{
+    font-size: 2.5rem;
+    padding: 2rem;
+    color: #fff;
+}
+
+.bottom-navbar a:hover{
+    background: var(--dark-color);
+}
+
+@media(max-width:768px){
+    .bottom-navbar{
+        display: inline-block;
+    }
+}
+
+/*----- login form start --------*/
+.login-form-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.9);
+    position: fixed;
+    top: 0;
+    right: -105%;
+    z-index: 10000;
+    height: 100%;
+    width: 100%;
+}
+
+.login-form-container.active{
+    right: 0;
+}
+
+.login-form-container form{
+    background: #fff;
+    border: var(--border);
+    width: 40rem;
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    margin: 2rem;
+}
+
+.login-form-container form h3{
+    font-size: 2.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--black);
+}
+
+.login-form-container form span{
+    display: block;
+    font-size: 1.5rem;
+    padding-top: 1rem;
+}
+
+.login-form-container form .box{
+    width: 100%;
+    margin: 0.7rem 0;
+    font-size: 1.6rem;
+    border: var(--border);
+    border-radius: 0.5rem;
+    padding: 1rem 1.2rem;
+    color: var(--black);
+    text-transform: none;
+}
+
+.login-form-container form .check-box{
+    display: flex;
+    align-items:center;
+    gap: 0.5rem;
+    padding: 1rem 0;
+}
+
+.login-form-container form .check-box label{
+    font-size: 1.5rem;
+    color: var(--light-color);
+    cursor: pointer;
+}
+
+.login-form-container form .btn{
+    text-align: center;
+    width: 100%;
+    margin: 1.5rem 0;
+}
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 0.9rem 3rem;
+    color: #fff;
+    border-radius: 0.5rem;
+    background: var(--blue);
+    border: 1px solid var(--border);
+    font-size: 1.7rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn:hover{
+    background-color: var(--dark-color);
+}
+
+.login-form-container form p{
+    padding-top: .8rem;
+    color: var(--light-color);
+    font-size: 1.5rem;
+}
+
+.login-form-container form p a{
+    text-decoration: underline;
+    color: var(--blue);
+}
+
+.login-form-container #close-login-btn{
+    position: absolute;
+    top: 1.5rem;
+    right: 2.5rem;
+    font-size:5rem;
+    cursor: pointer;
+}
+
+/*---- home section ----*/
+section{
+    padding: 3rem 9%;
+}
+
+@media (max-width:991px){
+    section{
+        padding: 3rem 2rem;
+    }
+}
+
+.home{
+    background: url('');
+    background-position: center;
+    background-size: cover;
+}
+
+.home .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.home .row .content{
+    flex: 1 1 42rem;
+}
+
+.home .row .content h3{
+    color: var(--black);
+    font-size:4.5rem;
+}
+
+.home .row .content p{
+    color: var(--light-color);
+    font-size: 1.4rem;
+    line-height: 2;
+    padding: 1rem 0;
+}
+
+.home .row .books-list{
+    flex: 1 1 42rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.home .row .books-list a img{
+    height: 25rem;
+}
+
+.home .row .books-list a:hover img{
+    transform: scale(0.9);
+}
+
+.home .row .books-list .stand{
+    width: 100%;
+    margin-top: -2rem;
+}
+
+@media (max-width:768px){
+    .home .row .content h3{
+        font-size:3.5rem;
+    }
+
+    .home .row .content{
+       text-align: center;
+    }
+}
+
+/*---- icons-container ----*/
+.icons-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+}
+
+.icons-container .icons{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.icons-container .icons i{
+    font-size: 3.5rem;
+    color: var(--blue);
+    padding: 2rem 0;
+}
+
+.icons-container .icons h3{
+    color: var(--light-color);
+    font-size: 2.2rem;
+    border-bottom: 0.5rem;
+}
+
+.icons-container .icons p{
+    color: var(--light-color);
+    font-size: 1.4rem;
+}
+
+/*------- featured section ----------*/
+
+.heading{
+    text-align:center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.heading::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 0.01rem;
+    background: rgba(0,0,0,0.1);
+    z-index: -1;
+}
+
+.heading span{
+    font-size: 3rem;
+    padding: 5rem 2rem;
+    color: var(--black);
+    border: var(--border);
+    background: #fff;
+}
+
+.featured .featured-slider .box{
+    width: 25rem;
+    margin: 2rem 0;
+    position: relative;
+    overflow: hidden;
+    border: var(--border);
+    text-align: center;
+}
+
+.featured .featured-slider .box:hover{
+    border: var(--border-hover);
+}
+
+.featured .featured-slider .box .image{
+    padding: 1rem;
+    background: linear-gradient(15deg, #eee 30%, #eee 30.1%);
+}
+
+.featured .featured-slider .box .image img{
+    height: 25rem;
+}
+
+.featured .featured-slider .box:hover .image{
+    transform: translateY(6rem);
+    cursor: pointer;
+}
+
+.featured .featured-slider .box .icons{
+    padding-bottom: var(--border-hover);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    z-index: 1;
+    transform: translateY(-100%);
+    border: var(--border);
+}
+
+.featured .featured-slider .box:hover .icons{
+    transform: translateY(0);
+}
+
+.featured .featured-slider .box .icons a{
+    color: var(--black);
+    font-size: 2.2rem;
+    padding: 1.3rem 1.5rem;
+}
+
+.featured .featured-slider .box .icons a:hover{
+    background: var(--blue);
+    color: #fff;
+}
+
+.featured .featured-slider .box .content{
+    background: #eee;
+    padding: 1.5rem;
+}
+
+.featured .featured-slider .box .content h3{
+    font-size: 2rem;
+    color: var(--black);
+}
+
+.featured .featured-slider .box .content .price{
+    font-size: 2.2rem;
+    color: var(--black);
+    padding-top: 1rem;
+}
+
+.featured .featured-slider .box .content .price span{
+    font-size: 1.5rem;
+    color: var(--light-color);
+    text-decoration: line-through;
+}
+
+/*------- news letter section start---------*/
+
+.newletter{
+    background: url('https://d2rd7etdn93tqb.cloudfront.net/wp-content/uploads/2019/10/reading-book-103119.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.newletter form{
+    max-width: 55rem;
+    margin-left: auto;
+    text-align: center;
+    padding: 5rem 0;
+}
+
+.newletter form h3{
+    font-size: 2.2rem;
+    color: #fff;
+    padding: 0.7rem;
+    font-weight: normal;
+}
+
+.newletter form .box{
+    width: 100%;
+    margin: 0.7rem 0;
+    padding: 1rem 1.2rem;
+    font-size: 1.5rem;
+    color: var(--black);
+    border-radius: 0.5rem;
+    text-transform: none;
+}
+
+@media(max-width:768px){
+    .newsletter{
+        background-position: right;
+    }
+
+    .newletter form{
+        margin-left: 0;
+        max-width: 100%;
+    }
+}
+
+/*----- arrivals section --------*/
+
+.arrivals .arrivals-slider .box{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+    border: var(--border);
+    margin: 1rem 0;
+    margin-top: 3rem;
+}
+
+.arrivals .arrivals-slider .box:hover{
+    border: var(--border-hover);
+}
+
+.arrivals .arrivals-slider .box .image img{
+    height: 15rem;
+}
+
+.arrivals .arrivals-slider .box .content h3{
+    font-size: 2rem;
+    color: var(--black);
+}
+
+.arrivals .arrivals-slider .box .content .price{
+    font-size: 2.2rem;
+    color: var(--black);
+    padding-bottom: 0.5rem;
+}
+
+.arrivals .arrivals-slider .box .content .price span{
+    font-size: 1.5rem;
+    color: var(--light-color);
+    text-decoration: line-through;
+}
+
+.arrivals .arrivals-slider .box .content .stars{
+    color: var(--blue);
+    font-size: 1.5rem;
+}
+
+/*-------- deal section ----*/
+
+.deal{
+    background: #f3f3f3;
+    display: flex;
+    align-items:center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.deal .content{
+    flex: 1 1 42rem;
+}
+
+.deal .image{
+    flex: 1 1 42rem;
+}
+
+.deal .image img{
+    width: 100%;
+}
+
+.deal .content h3{
+    color:var(--blue);
+    font-size: 2.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.deal .content h1{
+    color: var(--black);
+    font-size: 4rem;
+}
+
+.deal .content p{
+    padding: 1rem 0;
+    color: var(light-color);
+    font-size: 1.4rem;
+    line-height: 2;
+}
+
+/*------ review section --------*/
+
+.reviews .reviews-slider{
+    padding-top: 0.8rem;
+}
+.reviews .reviews-slider .box {
+    border: var(--border);
+    padding: 2rem;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.reviews .reviews-slider .box:hover{
+    border: var(--border-hover);
+}
+
+.reviews .reviews-slider .box h3{
+    color: var(--black);
+    font-size: 2.2rem;
+    padding: 1rem 0;
+    line-height: 2;
+}
+
+.reviews .reviews-slider .box img{
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.reviews .reviews-slider .box p{
+    color: var(--light-color);
+    font-size: 1.4rem;
+    padding: 1rem 0;
+    line-height: 2;
+}
+
+.reviews .reviews-slider .box .stars i{
+    font-size: 1.7rem;
+    color: var(--blue);
+}
+
+/*---------- blog section ------------*/
+.blogs .blog-slider .box{
+    margin: 2rem 0;
+    border: var(--border);
+}
+
+.blogs .blog-slider .box:hover{
+    border: var(--border-hover);
+}
+
+.blogs .blog-slider .box .image{
+    height: 25rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.blogs .blog-slider .box .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.blogs .blog-slider .box:hover .image img{
+    transform: scale(1.1);
+}
+
+.blogs .blog-slider .box .content{
+    padding: 1.5rem;
+}
+
+.blogs .blog-slider .box .content h3{
+    font-size: 2.2rem;
+    color: var(--black);
+}
+
+.blogs .blog-slider .box .content p{
+    font-size: 1.4rem;
+    color: var(--light-color);
+    padding: 1rem 0;
+    line-height: 2;
+}
+
+/*------- footer section ---------*/
+
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    padding: 1rem 0;
+}
+
+.footer .box-container .box h3{
+    font-size: 2.2rem;
+    color: var(--black);
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a{
+    display: block;
+    font-size: 1.4rem;
+    color: var(--light-color);
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a i{
+    color: var(--blue);
+    padding-right: 0.5rem;
+}
+
+.footer .box-container .box a:hover i{
+    padding-right: 2rem;
+}
+
+.footer .box-container .box .map{
+    width: 100%;
+}
+
+.footer .share{
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.footer .share a{
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    color: #fff;
+    background-color: var(--blue);
+    margin: 0 0 0.3rem;
+    border-radius: 50%;
+    padding:1.2rem;
+}
+
+.footer .credit{
+    border-top: var(--border);
+    margin-top: 2rem;
+    padding: 0.1rem;
+    padding-top: 2.5rem;
+    font-size: 2rem;
+    color: var(--light-color);
+    text-align: center;
+}
+
+.footer .credit span{
+    color:var(--blue);
+}
+    </style>
+
+    <!-------- font awesome cdn link --------->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!------- swipper cdn link ------------>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
 
 
+</head>
+<body>
 
-</script>
+    <!--------- header section start ------------>
+    <header class="header">
+        <div class="header_one">
+            <a href="" class="logo"><i class="fas fa-book"> Bookly</i></a>
+
+            <form action="" class="search-form">
+                <input id="search-box" type="search" placeholder="search here...">
+                <label for="" class="fas fa-search"></label>
+            </form>
+
+            <div class="icons">
+                <div id="search-btn" class="fas fa-search"></div>
+                <a href="" class="fas fa-heart"></a>
+                <a href="" class="fas fa-shopping-cart"></a>
+    
+                <form action="/logout?_method=DELETE" method="POST">
+                    <button class="nav-link fw-bold py-1 px-0 btn p=3 btn-dark text-white" type="submit">Logout</button>
+                </form>
+        
+                <div id="login-btn" ></div>
+            </div>
+        </div>
+
+        <!----- navigation bar -------->
+        <div class="header_two">
+            <div class="navbar">
+                <a href="#home">Home</a>
+                <a href="#featured">Featured</a>
+                <a href="#arrivals">Arrivals</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#blogs">Blogs</a>
+            </div>
+        </div>
+    
+    </header>
+
+    <!-------- bottom navbar start ----------->
+    <div class="bottom-navbar">
+        <a href="#home" class="fas fa-home"></a>
+        <a href="#featured" class="fas fa-list"></a>
+        <a href="#arrivals" class="fas fa-tags"></a>
+        <a href="#blogs" class="fas fa-app-store"></a>
+    </div>
+
+     <!-------- login form start ----------->
+    <div class="login-form-container">
+        <div id="close-login-btn" class="fas fa-times"></div>
+
+    </div>
+
+    <!-------- home section start ----------->
+    <section class="home" id="home">
+        <div class="row">
+            <div class="content">
+                <h3>upto 55% offers</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti sapiente eos quisquam voluptatibus, cum quod.</p>
+                <a href="" class="btn">shop now</a>
+            </div>
+
+            <div class="swiper books-list">
+                <div class="swiper-wrapper">
+                    <a href="" class="swiper-slide"><img src="https://thumbs.dreamstime.com/b/book-pen-4845537.jpg" alt=""></a>
+                    <a href="" class="swiper-slide"><img src="https://images-na.ssl-images-amazon.com/images/I/71Ui-NwYUmL.jpg" alt=""></a>
+                    <a href="" class="swiper-slide"><img src="https://i.pinimg.com/originals/d9/4d/d6/d94dd650fdbe5143e5024269974857a8.jpg" alt=""></a>
+                    <a href="" class="swiper-slide"><img src="https://i.pinimg.com/originals/88/55/27/885527cbb86db2feede84a83bcc52f16.jpg" alt=""></a>
+                    <a href="" class="swiper-slide"><img src="https://www.qualitylogoproducts.com/scratch-pads/notebook-and-pen-hq-382682.jpg?size=details" alt=""></a>
+                    <a href="" class="swiper-slide"><img src="https://rukminim1.flixcart.com/image/416/416/jur9nrk0/sketch-pad/b/z/9/100-wire-bound-artists-sketch-drawing-book-a4-size-100-pages-180-original-imaffhqjgkgvscgf.jpeg?q=70" alt=""></a>
+                </div>
+
+                <img class="stand" src="./image/stand.png" alt="">
+            </div>
+        </div>
+    </section>
+      
+
+     <!-------- home section ends  ----------->
+
+    <!-------- icons section start  ----------->
+
+    <section class="icons-container">
+        <div class="icons">
+            <i class="fas fa-plane"></i>
+            <div class="content">
+                <h3>over payment</h3>
+                <p>over payment $100</p>
+            </div>
+        </div>
+
+        <div class="icons">
+            <i class="fas fa-lock"></i>
+            <div class="content">
+                <h3>over payment</h3>
+                <p>over payment $100</p>
+            </div>
+        </div>
+
+        <div class="icons">
+            <i class="fas fa-headset"></i>
+            <div class="content">
+                <h3>over payment</h3>
+                <p>over payment $100</p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-------- featured section start  ----------->
+
+    <section class="featured" id="featured">
+        <div class="heading"><span>featured books</span></div>
+
+        <div class="swiper featured-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="" class="fas fa-search"></a>
+                        <a href="" class="fas fa-heart"></a>
+                        <a href="" class="fas fa-eye"></a>
+                    </div>
+
+                    <div class="image">
+                        <img src="https://thumbs.dreamstime.com/b/book-pen-4845537.jpg" alt="">
+                    </div>
+
+                    <div class="content">
+                        <h3>featured book</h3>
+                        <div class="price">$15.99 <span>$20.99</span></div>
+                        <a href="" class="btn">add to cart</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="" class="fas fa-search"></a>
+                        <a href="" class="fas fa-heart"></a>
+                        <a href="" class="fas fa-eye"></a>
+                    </div>
+
+                    <div class="image">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/71Ui-NwYUmL.jpg" alt="">
+                    </div>
+
+                    <div class="content">
+                        <h3>featured book</h3>
+                        <div class="price">$15.99 <span>$20.99</span></div>
+                        <a href="" class="btn">add to cart</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="" class="fas fa-search"></a>
+                        <a href="" class="fas fa-heart"></a>
+                        <a href="" class="fas fa-eye"></a>
+                    </div>
+
+                    <div class="image">
+                        <img src="https://i.pinimg.com/originals/d9/4d/d6/d94dd650fdbe5143e5024269974857a8.jpg" alt="">
+                    </div>
+
+                    <div class="content">
+                        <h3>featured book</h3>
+                        <div class="price">$15.99 <span>$20.99</span></div>
+                        <a href="" class="btn">add to cart</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="" class="fas fa-search"></a>
+                        <a href="" class="fas fa-heart"></a>
+                        <a href="" class="fas fa-eye"></a>
+                    </div>
+
+                    <div class="image">
+                        <img src="https://i.pinimg.com/originals/88/55/27/885527cbb86db2feede84a83bcc52f16.jpg" alt="">
+                    </div>
+
+                    <div class="content">
+                        <h3>featured book</h3>
+                        <div class="price">$15.99 <span>$20.99</span></div>
+                        <a href="" class="btn">add to cart</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="" class="fas fa-search"></a>
+                        <a href="" class="fas fa-heart"></a>
+                        <a href="" class="fas fa-eye"></a>
+                    </div>
+
+                    <div class="image">
+                        <img src="https://www.qualitylogoproducts.com/scratch-pads/notebook-and-pen-hq-382682.jpg?size=details" alt="">
+                    </div>
+
+                    <div class="content">
+                        <h3>featured book</h3>
+                        <div class="price">$15.99 <span>$20.99</span></div>
+                        <a href="" class="btn">add to cart</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="" class="fas fa-search"></a>
+                        <a href="" class="fas fa-heart"></a>
+                        <a href="" class="fas fa-eye"></a>
+                    </div>
+
+                    <div class="image">
+                        <img src="https://rukminim1.flixcart.com/image/416/416/jur9nrk0/sketch-pad/b/z/9/100-wire-bound-artists-sketch-drawing-book-a4-size-100-pages-180-original-imaffhqjgkgvscgf.jpeg?q=70" alt="">
+                    </div>
+
+                    <div class="content">
+                        <h3>featured book</h3>
+                        <div class="price">$15.99 <span>$20.99</span></div>
+                        <a href="" class="btn">add to cart</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="" class="fas fa-search"></a>
+                        <a href="" class="fas fa-heart"></a>
+                        <a href="" class="fas fa-eye"></a>
+                    </div>
+
+                    <div class="image">
+                        <img src="https://rukminim1.flixcart.com/image/416/416/xif0q/book/x/v/x/50-greatest-short-stories-original-imagkaa6urjepfts.jpeg?q=70" alt="">
+                    </div>
+
+                    <div class="content">
+                        <h3>featured book</h3>
+                        <div class="price">$15.99 <span>$20.99</span></div>
+                        <a href="" class="btn">add to cart</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="" class="fas fa-search"></a>
+                        <a href="" class="fas fa-heart"></a>
+                        <a href="" class="fas fa-eye"></a>
+                    </div>
+
+                    <div class="image">
+                        <img src="https://rukminim1.flixcart.com/image/416/416/kzygpzk0/book/a/i/j/the-return-of-the-king-original-imagbuzrgsw8rw5h.jpeg?q=70" alt="">
+                    </div>
+
+                    <div class="content">
+                        <h3>featured book</h3>
+                        <div class="price">$15.99 <span>$20.99</span></div>
+                        <a href="" class="btn">add to cart</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="" class="fas fa-search"></a>
+                        <a href="" class="fas fa-heart"></a>
+                        <a href="" class="fas fa-eye"></a>
+                    </div>
+
+                    <div class="image">
+                        <img src="https://rukminim1.flixcart.com/image/416/416/k5cs87k0/book/0/6/1/famous-fables-3-original-imafzfzawpz8dne5.jpeg?q=70" alt="">
+                    </div>
+
+                    <div class="content">
+                        <h3>featured book</h3>
+                        <div class="price">$15.99 <span>$20.99</span></div>
+                        <a href="" class="btn">add to cart</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="" class="fas fa-search"></a>
+                        <a href="" class="fas fa-heart"></a>
+                        <a href="" class="fas fa-eye"></a>
+                    </div>
+
+                    <div class="image">
+                        <img src="https://rukminim1.flixcart.com/image/416/416/kcc9q4w0/book/8/3/6/a-tale-of-two-cities-original-imafthkr3jjxwhwn.jpeg?q=70" alt="">
+                    </div>
+
+                    <div class="content">
+                        <h3>featured book</h3>
+                        <div class="price">$15.99 <span>$20.99</span></div>
+                        <a href="" class="btn">add to cart</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        <a href="" class="fas fa-search"></a>
+                        <a href="" class="fas fa-heart"></a>
+                        <a href="" class="fas fa-eye"></a>
+                    </div>
+
+                    <div class="image">
+                        <img src="https://thumbs.dreamstime.com/b/book-pen-4845537.jpg" alt="">
+                    </div>
+
+                    <div class="content">
+                        <h3>featured book</h3>
+                        <div class="price">$15.99 <span>$20.99</span></div>
+                        <a href="" class="btn">add to cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+
+     <!-------- news letter section start  ----------->
+
+    <section class="newletter">
+        <form action="">
+            <h3>subscribe for latest update</h3>
+            <input type="email" placeholder="enter your email" class="box">
+            <input type="submit" value="subscribe" class="btn">
+        </form>
+    </section>
+
+      <!-------- arrivals section start  ----------->
+
+      <section class="arrivals" id="arrivals">
+            <div class="heading"><span>new arrivals</span></div>
+            <div class="swiper arrivals-slider">
+                <div class="swiper-wrapper">
+                    <a href="" class="swiper-slide box">
+                        <div class="image">
+                            <img src="https://thumbs.dreamstime.com/b/book-pen-4845537.jpg" alt="">
+                        </div>
+                        <div class="content">
+                            <h3>new arrivals</h3>
+                            <div class="price">$15.99 <span>$20.99</span></div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="" class="swiper-slide box">
+                        <div class="image">
+                            <img src="https://images-na.ssl-images-amazon.com/images/I/71Ui-NwYUmL.jpg" alt="">
+                        </div>
+                        <div class="content">
+                            <h3>new arrivals</h3>
+                            <div class="price">$15.99 <span>$20.99</span></div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="" class="swiper-slide box">
+                        <div class="image">
+                            <img src="https://i.pinimg.com/originals/d9/4d/d6/d94dd650fdbe5143e5024269974857a8.jpg" alt="">
+                        </div>
+                        <div class="content">
+                            <h3>new arrivals</h3>
+                            <div class="price">$15.99 <span>$20.99</span></div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="" class="swiper-slide box">
+                        <div class="image">
+                            <img src="https://i.pinimg.com/originals/88/55/27/885527cbb86db2feede84a83bcc52f16.jpg" alt="">
+                        </div>
+                        <div class="content">
+                            <h3>new arrivals</h3>
+                            <div class="price">$15.99 <span>$20.99</span></div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="" class="swiper-slide box">
+                        <div class="image">
+                            <img src="https://www.qualitylogoproducts.com/scratch-pads/notebook-and-pen-hq-382682.jpg?size=details" alt="">
+                        </div>
+                        <div class="content">
+                            <h3>new arrivals</h3>
+                            <div class="price">$15.99 <span>$20.99</span></div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="swiper arrivals-slider">
+                <div class="swiper-wrapper">
+                    <a href="" class="swiper-slide box">
+                        <div class="image">
+                            <img src="https://rukminim1.flixcart.com/image/416/416/jur9nrk0/sketch-pad/b/z/9/100-wire-bound-artists-sketch-drawing-book-a4-size-100-pages-180-original-imaffhqjgkgvscgf.jpeg?q=70" alt="">
+                        </div>
+                        <div class="content">
+                            <h3>new arrivals</h3>
+                            <div class="price">$15.99 <span>$20.99</span></div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="" class="swiper-slide box">
+                        <div class="image">
+                            <img src="https://rukminim1.flixcart.com/image/416/416/xif0q/book/x/v/x/50-greatest-short-stories-original-imagkaa6urjepfts.jpeg?q=70" alt="">
+                        </div>
+                        <div class="content">
+                            <h3>new arrivals</h3>
+                            <div class="price">$15.99 <span>$20.99</span></div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="" class="swiper-slide box">
+                        <div class="image">
+                            <img src="https://rukminim1.flixcart.com/image/416/416/kzygpzk0/book/a/i/j/the-return-of-the-king-original-imagbuzrgsw8rw5h.jpeg?q=70" alt="">
+                        </div>
+                        <div class="content">
+                            <h3>new arrivals</h3>
+                            <div class="price">$15.99 <span>$20.99</span></div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="" class="swiper-slide box">
+                        <div class="image">
+                            <img src="https://rukminim1.flixcart.com/image/416/416/k5cs87k0/book/0/6/1/famous-fables-3-original-imafzfzawpz8dne5.jpeg?q=70" alt="">
+                        </div>
+                        <div class="content">
+                            <h3>new arrivals</h3>
+                            <div class="price">$15.99 <span>$20.99</span></div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="" class="swiper-slide box">
+                        <div class="image">
+                            <img src="https://rukminim1.flixcart.com/image/416/416/kcc9q4w0/book/8/3/6/a-tale-of-two-cities-original-imafthkr3jjxwhwn.jpeg?q=70" alt="">
+                        </div>
+                        <div class="content">
+                            <h3>new arrivals</h3>
+                            <div class="price">$15.99 <span>$20.99</span></div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+      </section>
+
+     <!-------- deal section start  ----------->
+
+     <section class="deal">
+        <div class="content">
+            <h3>deal of the day</h3>
+            <h1>upto 50% offers</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, vero. Voluptatibus voluptates inventore nulla vel.
+            </p>
+            <a href="" class="btn">shop now</a>
+        </div>
+
+        <div class="image">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.mgFAx357CYlZsSyXXH0wqAHaE8&pid=Api&P=0&h=180" alt="">
+        </div>
+     </section>
+
+    <!-------- review section start  ----------->
+     <section class="reviews" id="reviews">
+        <h1 class="heading"><span>client's reviews</span></h1>
+
+        <div class="swiper reviews-slider">
+            <div class="swiper-wrapper">              
+
+                <div class="swiper-slide box">
+                    <img src="./image/pic-1.png" alt="">
+                    <h3>john deo</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque eligendi amet recusandae perferendis cumque nesciunt.
+                    </p>
+
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <img src="./image/pic-2.png" alt="">
+                    <h3>john deo</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque eligendi amet recusandae perferendis cumque nesciunt.
+                    </p>
+
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <img src="./image/pic-3.png" alt="">
+                    <h3>john deo</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque eligendi amet recusandae perferendis cumque nesciunt.
+                    </p>
+
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <img src="./image/pic-4.png" alt="">
+                    <h3>john deo</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque eligendi amet recusandae perferendis cumque nesciunt.
+                    </p>
+
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <img src="./image/pic-5.png" alt="">
+                    <h3>john deo</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque eligendi amet recusandae perferendis cumque nesciunt.
+                    </p>
+
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <img src="./image/pic-6.png" alt="">
+                    <h3>john deo</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque eligendi amet recusandae perferendis cumque nesciunt.
+                    </p>
+
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+     </section>
+
+    <!-------- blog section start  ----------->
+     <section class="blogs" id="blogs">
+        <div class="heading"><span>our blogs</span></div>
+
+        <div class="swiper blog-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="https://tse1.mm.bing.net/th?id=OIP.RBzAJRBpc2l0GjTP9LDCjQHaE8&pid=Api&P=0&h=180" alt="">
+                    </div>
+
+                    <div class="content">
+                        <h3>blog title goes here</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora placeat, provident quidem inventore.
+                        </p>
+                        <a href="" class="btn">read more</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="https://rukminim1.flixcart.com/image/416/416/jur9nrk0/sketch-pad/b/z/9/100-wire-bound-artists-sketch-drawing-book-a4-size-100-pages-180-original-imaffhqjgkgvscgf.jpeg?q=70" alt="">
+                    </div>
+
+                    <div class="content">
+                        <h3>blog title goes here</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora placeat, provident quidem inventore.
+                        </p>
+                        <a href="" class="btn">read more</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="https://www.zastavki.com/pictures/originals/2015/Creative_Wallpaper_A_stack_of_old_books_on_a_wooden_surface_101580_.jpg" alt="">
+                    </div>
+
+                    <div class="content">
+                        <h3>blog title goes here</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora placeat, provident quidem inventore.
+                        </p>
+                        <a href="" class="btn">read more</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="https://tse1.mm.bing.net/th?id=OIP.frTTHfSu2IVQS1Ma1U2wQQHaES&pid=Api&P=0&h=180" alt="">
+                    </div>
+
+                    <div class="content">
+                        <h3>blog title goes here</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora placeat, provident quidem inventore.
+                        </p>
+                        <a href="" class="btn">read more</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="https://tse1.mm.bing.net/th?id=OIP.frTTHfSu2IVQS1Ma1U2wQQHaES&pid=Api&P=0&h=180" alt="">
+                    </div>
+
+                    <div class="content">
+                        <h3>blog title goes here</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora placeat, provident quidem inventore.
+                        </p>
+                        <a href="" class="btn">read more</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+     </section>
+
+    <!-------- footer section start  ----------->
+    
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>our locations</h3>
+                <a href=""><i class="fas fa-map-marker-alt"></i>india</a>
+                <a href=""><i class="fas fa-map-marker-alt"></i>USA</a>
+                <a href=""><i class="fas fa-map-marker-alt"></i>russia</a>
+                <a href=""><i class="fas fa-map-marker-alt"></i>france</a>
+                <a href=""><i class="fas fa-map-marker-alt"></i>japan</a>
+                <a href=""><i class="fas fa-map-marker-alt"></i>africa</a>
+            </div>
+
+            <div class="box">
+                <h3>quick links</h3>
+                <a href=""><i class="fas fa-arrow-right"></i>home</a>
+                <a href=""><i class="fas fa-arrow-right"></i>featured</a>
+                <a href=""><i class="fas fa-arrow-right"></i>arrivals</a>
+                <a href=""><i class="fas fa-arrow-right"></i>blogs</a>    
+            </div>
+
+            <div class="box">
+                <h3>exatra links</h3>
+                <a href=""><i class="fas fa-arrow-right"></i>account info</a>
+                <a href=""><i class="fas fa-arrow-right"></i>ordered items</a>
+                <a href=""><i class="fas fa-arrow-right"></i>privacy policy</a>
+                <a href=""><i class="fas fa-arrow-right"></i>payment method</a>
+                <a href=""><i class="fas fa-arrow-right"></i>our services</a>
+            </div>
+
+            <div class="box">
+                <h3>contact info</h3>
+                <a href=""><i class="fas fa-phone"></i>+123-356-546</a>
+                <a href=""><i class="fas fa-phone"></i>+123-356-546</a>
+                <a href=""><i class="fas fa-envelope"></i>john@gmail.com</a>
+                <img src="https://tse2.mm.bing.net/th?id=OIP.cHwi8y0DLb2tG5Djz4wjjQHaFP&pid=Api&P=0&h=180" alt="" class="map">
+            </div>
+        </div>
+
+        <div class="share">
+            <a href=""><i class="fa fa-facebook"></i></a>
+            <a href=""><i class="fa fa-twitter"></i></a>
+            <a href=""><i class="fa fa-instagram"></i></a>
+            <a href=""><i class="fa fa-linkedin"></i></a>
+            <a href=""><i class="fa fa-square-pinterest"></i></a>
+        </div>
+
+        <div class="credit">created by <span>Sanwin's Webworks</span> | all rights reserved</div>
+    </section>
+          
+
+    <!---- swiper cdn link ---------->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+     
+
+     <!------- customer script link --------->
+     <script>
+        /*------- search button ----------- */
+
+searchform = document.querySelector('.search-form');
+
+document.querySelector('#search-btn').onclick = () =>{
+  searchform.classList.toggle('active');
+}
+
+
+/*---- login form -------*/
+
+var loginForm = document.querySelector('.login-form-container');
+
+document.querySelector('#login-btn').onclick = () => {
+    loginForm.classList.toggle('active');
+}
+
+document.querySelector('#close-login-btn').onclick = () =>{
+    loginForm.classList.remove('active');
+}
+
+/*---- swiper  -------*/
+
+var swiper = new Swiper(".books-list", {
+
+  loop:true,
+  centeredSlides:true,
+  autoplay:{
+    delay:9500,
+    disableOnInteraction:false,
+  },
+  breakpoints: {
+    0: {
+      slidesPerView:1,
+    },
+    768: {
+      slidesPerView:2,
+    },
+    1024: {
+      slidesPerView:3,
+    },
+  },
+});
+
+/*---- featured section  -------*/
+
+var swiper = new Swiper(".featured-slider", {
+
+  spaceBetween:10,
+  loop:true,
+  centeredSlides:true,
+  autoplay:{
+    delay:9500,
+    disableOnInteraction:false,
+  },
+ navigation:{
+        nextEl:".swiper-button-next",
+        prevEl:".swiper-button-prev",
+    },
+  breakpoints: {
+    0: {
+      slidesPerView:1,
+    },
+    450: {
+      slidesPerView:2,
+    },
+    768: {
+      slidesPerView:3,
+    },
+    1024: {
+      slidesPerView:4,
+    },
+  },
+});
+
+/*-------- window scroll ----*/
+
+window.onscroll = () =>{
+
+  searchform.classList.remove('active');
+
+  if (window.scrollY > 0){
+    document.querySelector('.header .header_two').classList.add('active');
+
+  }else{
+    document.querySelector('.header .header_two').classList.remove('active');
+  }
+}
+
+window.onload = () => {
+
+  if (window.scrollY > 80){
+    document.querySelector('.header .header_two').classList.add('active');
+
+  }else{
+    document.querySelector('.header .header_two').classList.remove('active');
+  }
+}
+
+  /*-------- arrivals section start ---------- */
+
+  var swiper = new Swiper('.arrivals-slider', {
+    spaceBetween:10,
+    loop:true,
+    centeredSlides:true,
+    autoplay:{
+      delay:9500,
+      disableOnInteraction:false,
+    },
+    breakpoints: {
+      0: {
+        slidesPerView:1,
+      },
+      768: {
+        slidesPerView:2,
+      },
+      1024: {
+        slidesPerView:3,
+      },
+    },
+  });
+
+  /*------ review section --------*/
+
+  var swiper = new Swiper(".reviews-slider", {
+    spaceBetween:10,
+    loop:true,
+    centeredSlides:true,
+    autoplay:{
+      delay:9500,
+      disableOnInteraction:false,
+    },
+    breakpoints: {
+      0: {
+        slidesPerView:1,
+      },
+      768: {
+        slidesPerView:2,
+      },
+      1024: {
+        slidesPerView:3,
+      },
+    },
+  });
+
+  /*---------- blog section ------------*/
+
+  var swiper = new Swiper(".blog-slider", {
+    spaceBetween:10,
+    loop:true,
+    centeredSlides:true,
+    autoplay:{
+      delay:9500,
+      disableOnInteraction:false,
+    },
+    breakpoints: {
+      0: {
+        slidesPerView:1,
+      },
+      768: {
+        slidesPerView:2,
+      },
+      1024: {
+        slidesPerView:3,
+      },
+    },
+  });
+     </script>
+    
 </body>
 </html>
